@@ -1,0 +1,15 @@
+extends layouts/default
+
+include ../blocks/modules/main-nav/main-nav
+include ../blocks/modules/profile/profile
+
+block variables
+	- const title = "Главная страница"
+
+block content
+	+mainNav
+	main.main
+		+profile
+block scripts
+	script(src="js/vendor/libs.min.js")
+	script(src="js/main.min.js")

@@ -1,0 +1,73 @@
+include ../../components/select/select
+
+mixin profile
+    .profile
+        form(method="post").form.profile__form
+            .profile__section
+                h3.form__title Личная информация
+                .profile__header
+                    .profile__avatar
+                    .profile__header-content
+                        .profile__upload
+                            .profile__upload-header
+                                +icon('warn', 'profile__upload-icon')
+                                p.profile__upload-text Максимальный размер файла для фото или видео профиля - 15 МБ
+                            .upload-btn.profile__upload-btn
+                                label(for="profile__upload-field").upload-btn__label
+                                    +icon('download', 'upload-btn__icon')
+                                    span.upload-btn__text Загрузить фото или видео
+                                input(type="file" id="profile__upload-field").upload-btn__field
+                .profile__form-content
+                    .form__row
+                        .form__group.form__group--small
+                            label(for="name").form__label Имя
+                            input(type="text" placeholder="Введите имя" id="name" required).form__field
+                        .form__group.form__group--small
+                            label(for="lastName").form__label Фамилия
+                            input(type="text" placeholder="Введите фамилию" id="lastName" required).form__field
+                    .form__group
+                        label(for="nickname").form__label Имя пользователя
+                        input(type="text" placeholder="Введите имя" id="nickname" required).form__field
+                    .form__group
+                        label(for="teacher").form__label Вид деятельности
+                        input(type="text" placeholder="Преподаватель" id="teacher" required).form__field
+                    .form__group
+                        label(for="links").form__label Мои ссылки
+                        .form__links
+                            a(href="/").form__links-item https://www.behance.net/
+                        input(type="text" placeholder="Введите ссылку" id="links" required).form__field
+                    .form__group
+                        label(for="about").form__label О себе
+                        textarea(placeholder="Расскажите немного о себе" id="about" required).form__field.form__textarea
+            .profile__section
+                h3.form__title Контактные даные
+                .form__row
+                    .form__group.form__group--small
+                        label(for="name").form__label Место расположения
+                        +select(['Россия', 'Украина', 'Дания'], 'Россия')
+                    .form__group.form__group--small
+                        input(type="text" placeholder="Город проживания" id="city" required).form__field
+                .form__row
+                    .form__group.form__group--small
+                        label(for="email").form__label Эл. адрес
+                        input(type="text" placeholder="Введите ваш Email" id="email" required).form__field
+                    .form__group.form__group--small
+                        label(for="tel").form__label Номер телефона
+                        input(type="text" placeholder="38 (099) 568 432 3" id="tel" required).form__field
+                .form__group
+                        label(for="site").form__label Личный сайт
+                        input(type="text" placeholder="Введите URL" id="site" required).form__field
+                .profile__section-row
+                    .profile__section-info
+                        h5.profile__section-title Показать в профиле
+                        p.profile__section-desc Ваши контактные даные будут отображаться в Вашем профиле.
+                    .slider-btn
+                        input(type="checkbox" id="slider-show").slider-btn__field
+                        label(for="slider-show").slider-btn__label
+            .profile__section
+                h3.form__title Безвозвратное удаление аккаунта
+                .profile__section-row
+                    .profile__section-info
+                        h5.profile__section-title Аккаунт удаляется навсегда.
+                        p.profile__section-desc После удаления аккаунта на ---------  вы не сможете восстановить доступ к размещенным материалам и информации. Мессенджер и сообщения также будут удалены.
+                    button(type="submit").btn.profile__delete Удалить

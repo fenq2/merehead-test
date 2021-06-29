@@ -1,0 +1,8 @@
+mixin select(items, current, mod)
+    .select(class=mod)
+        .select__header
+            span.select__current= current
+            +icon('arrow', 'select__arrow')
+        .select__body
+            each val in items
+                .select__item= val

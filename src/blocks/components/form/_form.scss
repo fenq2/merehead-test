@@ -1,0 +1,86 @@
+.form {
+    &__label {
+        display: block;
+        font-size: 14px;
+        line-height: 36px;
+        color: #323232;
+    }
+
+    &__group {
+        margin-top: 16px;
+
+        &--small {
+            width: 49%;
+
+            @media screen and (max-width: 575px) {
+                width: 100%;
+            }
+        }
+    }
+
+    &__field {
+        border: 1px solid #C4C4C4;
+        border-radius: 6px;
+        outline: none;
+        width: 100%;
+        padding: 10px 16px;
+        font-size: 16px;
+        line-height: 19px;
+
+        &:focus {
+            border: 1px solid #000000;
+
+            &::placeholder {
+                opacity: 0;
+            }
+        }
+
+        &::placeholder {
+            color: #C4C4C4;
+        }
+    }
+
+    &__row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    &__textarea {
+        height: 120px;
+        padding: 10px 25px;
+    }
+
+    &__title {
+        display: block;
+        font-size: 24px;
+        font-weight: bold;
+        color: #323232;
+
+        @media screen and (max-width: 768px) {
+            font-size: 20px;
+        }
+
+        @media screen and (max-width: 575px) {
+            font-size: 16px;
+        }
+    }
+
+    &__links {
+        padding-bottom: 15px;
+
+        &-item {
+            display: block;
+            text-decoration: none;
+            color: #000000;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 19px;
+
+            &:hover {
+                color: red;
+            }
+        }
+    }
+}
